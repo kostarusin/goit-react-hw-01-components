@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import style from './Statistic.module.css';
 
 export const Statistic = ({ title, stats }) => {
+  
   return (
     <>
       <section className={style.statistics}>
