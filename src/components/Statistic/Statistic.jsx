@@ -1,15 +1,20 @@
 import PropTypes from 'prop-types';
 import style from './Statistic.module.css';
+import { getRandomColor } from './utils';
 
 export const Statistic = ({ title, stats }) => {
-  
   return (
     <>
       <section className={style.statistics}>
         {title ? <h2 className={style.title}>{title}</h2> : null}
-        <ul className={style.statList}>
+        <ul 
+          className={title ? style.statList : style.statListOnly}>
           {stats.map(stat => (
-            <li className={style.item} key={stat.id}>
+            <li
+              className={style.item}
+              style={{ backgroundColor: getRandomColor() }}
+              key={stat.id}
+            >
               <span className={style.label}>{stat.label}</span>
               <span className={style.percentage}>{stat.percentage}</span>
             </li>
@@ -21,7 +26,7 @@ export const Statistic = ({ title, stats }) => {
 };
 
 Statistic.propTypes = {
-    title: PropTypes.string,
+  title: PropTypes.string,
   stats: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string.isRequired,

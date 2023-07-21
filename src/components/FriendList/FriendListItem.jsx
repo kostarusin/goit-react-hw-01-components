@@ -5,12 +5,7 @@ export const FriendListItem = ({ avatar, name, isOnline }) => {
   return (
     <>
       <li className={style.item}>
-        <span
-          className={`${style.isOnline} ${
-            isOnline ? style.onLine : style.offLine
-          }`}
-        >
-          {isOnline ? 'online' : 'offline'}
+        <span className={isOnline ? style.onLine : style.offLine}>
         </span>
         <img
           className={style.avatar}

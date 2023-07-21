@@ -11,7 +11,7 @@ import transactions from 'components/TransactionHistory/transactions.json'
 
 export const App = () => {
   return (
-    <>
+    <div className='container'>
       <Profile
         username={user.username}
         tag={user.tag}
@@ -23,6 +23,6 @@ export const App = () => {
       <FriendList friends={friends}/>
       <TransactionHistory items={transactions}/>
            
-    </>
+    </div>
   );
 };
