@@ -6,7 +6,7 @@ export const Statistic = ({ title, stats }) => {
   return (
     <>
       <section className={style.statistics}>
-        {title ? <h2 className={style.title}>{title}</h2> : null}
+      {title && <h2 className={style.title}>{title}</h2> }
         <ul 
           className={title ? style.statList : style.statListOnly}>
           {stats.map(stat => (
